@@ -1,0 +1,6 @@
+/* Adjust the numpad button layout */
+.pos .numpad .button {
+    flex: 1 0 20%; /* Adjust based on the number of buttons per row you desire */
+    margin: 2px;
+    min-height: 50px; /* Adjust based on your needs */
+}

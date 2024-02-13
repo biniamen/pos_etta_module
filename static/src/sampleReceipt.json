@@ -1,0 +1,96 @@
+{
+    "orderlines": [
+        {
+            "productName": "Discount",
+            "price": "$ 0.00",
+            "qty": "66.00",
+            "unit": "Units",
+            "unitPrice": "$ 0.00",
+            "oldUnitPrice": "",
+            "discount": "0",
+            "customerNote": "",
+            "pack_lot_lines": false
+        }
+    ],
+    "paymentlines": [
+        {
+            "amount": 0,
+            "name": "Cash",
+            "ticket": ""
+        }
+    ],
+    "amount_total": 0,
+    "total_without_tax": 0,
+    "amount_tax": 0,
+    "total_paid": 0,
+    "total_discount": 0,
+    "rounding_applied": 0,
+    "tax_details": [
+        {
+            "amount": 0,
+            "base": 0,
+            "tax": {
+                "id": 1,
+                "name": "15%",
+                "price_include": false,
+                "include_base_amount": false,
+                "is_base_affected": true,
+                "amount_type": "percent",
+                "children_tax_ids": [],
+                "amount": 15,
+                "sum_repartition_factor": 1
+            },
+            "name": "15%"
+        }
+    ],
+    "change": 0,
+    "name": "Order 00008-004-0001",
+    "invoice_id": null,
+    "cashier": "Administrator",
+    "date": "11/13/2023 22:59:34",
+    "pos_qr_code": false,
+    "ticket_code": false,
+    "base_url": "http://localhost:8069",
+    "footer": false,
+    "shippingDate": null,
+    "headerData": {
+        "company": {
+            "id": 1,
+            "currency_id": [
+                1,
+                "USD"
+            ],
+            "email": false,
+            "website": false,
+            "company_registry": false,
+            "vat": false,
+            "name": "My Company",
+            "phone": "",
+            "partner_id": [
+                1,
+                "My Company"
+            ],
+            "country_id": [
+                233,
+                "United States"
+            ],
+            "state_id": false,
+            "tax_calculation_rounding_method": "round_per_line",
+            "nomenclature_id": [
+                1,
+                "Default Nomenclature"
+            ],
+            "point_of_sale_use_ticket_qr_code": false,
+            "point_of_sale_ticket_unique_code": false,
+            "country": {
+                "id": 233,
+                "name": "United States",
+                "vat_label": "",
+                "code": "US"
+            }
+        },
+        "cashier": "Administrator",
+        "header": false,
+        "trackingNumber": "801"
+    }
+}

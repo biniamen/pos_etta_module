@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_etta.Navbar" t-inherit="point_of_sale.Navbar" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'menu-button')]/ul/li/ul" position="inside">
+            <li class="menu-item navbar-button edit-button" t-on-click="() => this.onClick()">
+                <a class="dropdown-item py-2">Fiscal Reading</a>
+            </li>
+             <li class="menu-item navbar-button edit-button" t-on-click="onXReportClick">
+                <a class="dropdown-item py-2">Print X-Session</a>
+            </li>
+            <li class="menu-item navbar-button" t-on-click="onZReportClick">
+                <a class="dropdown-item py-2">Print Z-Report</a>
+            </li>
+        </xpath>
+    </t>
+
+</templates>

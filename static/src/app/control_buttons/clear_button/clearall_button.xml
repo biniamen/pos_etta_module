@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="pos_etta.ClearAllButton" owl="1">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="click" t-att-disabled="state.disabled">
+            <i class="fa fa-remove me-1" role="img" aria-label="Product Combos" title="Product Combos"></i>
+            Clear All
+        </button>
+    </t>
+</templates>
