@@ -5,7 +5,6 @@ class ResConfigSettings(models.TransientModel):
 
     disable_remove_order_line_basic_right = fields.Boolean(
         string="Disable Basic Right Users for Remove Order Line",
-        default=False,
         help="Disable users with basic rights to remove order lines in POS.",
         config_parameter='pos_config.disable_remove_order_line_basic_right',
     )
