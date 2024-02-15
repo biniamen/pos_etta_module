@@ -1,0 +1,11 @@
+<!-- your_module/views/assets.xml -->
+<odoo>
+    <data>
+        <!-- Extend the POS bundle with your custom script -->
+        <template id="assets_backend" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_etta/static/src/app/pos_config_settings_patch.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -20,6 +20,8 @@ patch(RefundButton.prototype, {
 
         this.checkUserRights();
         this.loadConfigSettings();
+        this.loadResConfigSettings2();
+
         //this.actionService = useService('action');
     },
     async loadUserRights() {
@@ -67,6 +69,19 @@ patch(RefundButton.prototype, {
         // Directly update the component's state based on the fetched value
         this.state.disabled = configParam === 'True';
         console.log(configParam)
+    },
+    // this one must replace the exiting
+    async loadResConfigSettings2() {
+        const posConfig = this.pos.config;
+        if (!posConfig.is_loaded_res_config_settings) {
+            // Fetch the additional fields from 'pos.config' and store them
+            const fields = await this.orm.call('pos.config', 'read', [posConfig.id, ['disable_remove_order_line_basic_right']]);
+            posConfig.disable_remove_order_line_basic_right = fields[0].disable_remove_order_line_basic_right;
+            posConfig.is_loaded_res_config_settings = true;
+        }
+
+        // You can now access 'your_custom_field' from pos.config in your POS components
+        console.log('Example Setting:', posConfig.disable_remove_order_line_basic_right);
     },
 
 });

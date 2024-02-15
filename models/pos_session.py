@@ -1,11 +1,18 @@
 
-from odoo import models
+from odoo import api, models
 
 
 class PosSession(models.Model):
     """Model inherited to add additional functionality"""
     _inherit = 'pos.session'
 
+    @api.model
+    def login(self, login_number, user_id, pos_config_id):
+        res = super(PosSession, self).login(login_number, user_id, pos_config_id)
+        if res.get('code') == 200:
+            pos_config = self.env['pos.config'].browse(pos_config_id)
+            res['data']['res_config_settings'] = pos_config.get_res_config_settings()
+        return res
     def _pos_ui_models_to_load(self):
         """Used to super the _pos_ui_models_to_load"""
         result = super()._pos_ui_models_to_load()

@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 class PosConfig(models.Model):
     _inherit = 'pos.config'
@@ -8,3 +8,11 @@ class PosConfig(models.Model):
         string="Disable Removal of Order Line for Basic Rights Users",
         help="If enabled, users with basic rights cannot remove order lines."
     )
+
+    @api.model
+    def get_res_config_settings(self):
+        # Assuming 'module_example_setting' is a field in 'res.config.settings'
+        settings = self.env['res.config.settings'].search([], limit=1)  # Get the latest settings
+        return {
+            'disable_remove_order_line_basic_right': settings.disable_remove_order_line_basic_right,
+        }
