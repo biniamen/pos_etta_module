@@ -34,16 +34,12 @@ patch(RefundButton.prototype, {
         this.userRights.rights = rightsDescription;
     },
     async click() {
-        if (this.state.disabled) {
-            console.log("User does not have rights to use the refund.");
+        if (this.pos.get_cashier().role !== 'manager') {
+            this.showErrorMessage("Restricted Access. Please Contact Supervisor.");
             return; // Do nothing if button is disabled
         }
-        // const data = this.env.services.pos.config;
-        // console.log(data);
-        // Call the original click method using super
+//Create a Beep Sound from Device
         await super.click();
-        // Log a message to the console after the original click action
-        console.log("Refund button clicked!");
     },
     async checkUserRights() {
         // Ensure pos service is available
@@ -80,8 +76,10 @@ patch(RefundButton.prototype, {
             posConfig.is_loaded_res_config_settings = true;
         }
 
-        // You can now access 'your_custom_field' from pos.config in your POS components
-        console.log('Example Setting:', posConfig.disable_remove_order_line_basic_right);
+        // Update the state based on the disable_remove_order_line_basic_right value
+        this.state.disabled = posConfig.disable_remove_order_line_basic_right;
+
+        console.log('Refund Button Disabled:', this.state.disabled);
     },
 
 });
