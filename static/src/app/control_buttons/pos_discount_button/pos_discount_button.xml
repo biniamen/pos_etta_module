@@ -1,0 +1,16 @@
+<templates>
+    <t t-name="pos_etta.DiscountButton" owl="1">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="click">
+            <i class="fa fa-percent me-1" role="img" aria-label="5% Discount" title="5% Discount" />
+            5% Discount
+        </button>
+    </t>
+</templates>
+
+
+<!--<template id="pos_etta.ProductScreen" inherit_id="point_of_sale.ProductScreen">-->
+<!--        <xpath expr="//div[@class='numpad']/button[@class='col btn btn-light py-3 border fw-bolder rounded-0 active border-primary']" position="after">-->
+<!--            &lt;!&ndash; Add your 5% discount button here &ndash;&gt;-->
+<!--            <button class="col btn btn-light py-3 border fw-bolder rounded-0" data-value="5pcDisc">5% Disc</button>-->
+<!--        </xpath>-->
+<!--    </template>-->
