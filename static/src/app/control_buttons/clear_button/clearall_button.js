@@ -18,6 +18,7 @@ export class ClearAllButton extends Component {
         this.checkUserRights();
         this.loadUserRights();
 
+
     }
 
     async loadUserRights() {
@@ -42,6 +43,8 @@ export class ClearAllButton extends Component {
 
 
     async click() {
+                console.log(this.pos.get_cashier())
+
         if (this.state.disabled) {
             return; // Do nothing if button is disabled
         }
